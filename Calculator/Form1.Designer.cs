@@ -1,7 +1,9 @@
 ﻿using System;
 
-namespace Calculator {
-    partial class Form1 {
+namespace Calculator 
+{
+    partial class Form1 
+    {
         /// <summary>
         /// Required designer variable.
         /// </summary>
@@ -11,8 +13,10 @@ namespace Calculator {
         /// Clean up any resources being used.
         /// </summary>
         /// <param name="disposing">true if managed resources should be disposed; otherwise, false.</param>
-        protected override void Dispose(bool disposing) {
-            if (disposing && (components != null)) {
+        protected override void Dispose(bool disposing) 
+        {
+            if (disposing && (components != null)) 
+            {
                 components.Dispose();
             }
             base.Dispose(disposing);
@@ -24,7 +28,9 @@ namespace Calculator {
         /// Required method for Designer support - do not modify
         /// the contents of this method with the code editor.
         /// </summary>
-        private void InitializeComponent() {
+        private void InitializeComponent() 
+        {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
             this.but4 = new System.Windows.Forms.Button();
             this.but1 = new System.Windows.Forms.Button();
@@ -41,7 +47,7 @@ namespace Calculator {
             this.butCE = new System.Windows.Forms.Button();
             this.butC = new System.Windows.Forms.Button();
             this.butPlus = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.buttonPlusMin = new System.Windows.Forms.Button();
             this.butLn = new System.Windows.Forms.Button();
             this.butEquals = new System.Windows.Forms.Button();
             this.butMinus = new System.Windows.Forms.Button();
@@ -60,6 +66,12 @@ namespace Calculator {
             this.butPow2 = new System.Windows.Forms.Button();
             this.textBox = new System.Windows.Forms.TextBox();
             this.label = new System.Windows.Forms.Label();
+            this.contextMenuStrip1 = new System.Windows.Forms.ContextMenuStrip(this.components);
+            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.fIleToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.helpToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.exitToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // but4
@@ -136,7 +148,7 @@ namespace Calculator {
             this.butDot.Name = "butDot";
             this.butDot.Size = new System.Drawing.Size(63, 63);
             this.butDot.TabIndex = 8;
-            this.butDot.Text = ".";
+            this.butDot.Text = ",";
             this.butDot.UseVisualStyleBackColor = true;
             this.butDot.Click += new System.EventHandler(this.onNumClick);
             // 
@@ -229,6 +241,7 @@ namespace Calculator {
             this.butCE.TabIndex = 15;
             this.butCE.Text = "CE";
             this.butCE.UseVisualStyleBackColor = true;
+            this.butCE.Click += new System.EventHandler(this.butCE_Click);
             // 
             // butC
             // 
@@ -241,6 +254,7 @@ namespace Calculator {
             this.butC.TabIndex = 16;
             this.butC.Text = "C";
             this.butC.UseVisualStyleBackColor = true;
+            this.butC.Click += new System.EventHandler(this.butC_Click);
             // 
             // butPlus
             // 
@@ -253,18 +267,20 @@ namespace Calculator {
             this.butPlus.TabIndex = 17;
             this.butPlus.Text = "+";
             this.butPlus.UseVisualStyleBackColor = true;
+            this.butPlus.Click += new System.EventHandler(this.onSimpleOperation);
             // 
-            // button2
+            // buttonPlusMin
             // 
-            this.button2.Anchor = System.Windows.Forms.AnchorStyles.None;
-            this.button2.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
-            this.button2.Font = new System.Drawing.Font("Segoe Script", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.Location = new System.Drawing.Point(285, 409);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(63, 63);
-            this.button2.TabIndex = 18;
-            this.button2.Text = "+-";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonPlusMin.Anchor = System.Windows.Forms.AnchorStyles.None;
+            this.buttonPlusMin.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
+            this.buttonPlusMin.Font = new System.Drawing.Font("Segoe Script", 16.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonPlusMin.Location = new System.Drawing.Point(285, 409);
+            this.buttonPlusMin.Name = "buttonPlusMin";
+            this.buttonPlusMin.Size = new System.Drawing.Size(63, 63);
+            this.buttonPlusMin.TabIndex = 18;
+            this.buttonPlusMin.Text = "+-";
+            this.buttonPlusMin.UseVisualStyleBackColor = true;
+            this.buttonPlusMin.Click += new System.EventHandler(this.buttonPlusMin_Click);
             // 
             // butLn
             // 
@@ -277,6 +293,7 @@ namespace Calculator {
             this.butLn.TabIndex = 19;
             this.butLn.Text = "ln";
             this.butLn.UseVisualStyleBackColor = true;
+            this.butLn.Click += new System.EventHandler(this.butLn_Click);
             // 
             // butEquals
             // 
@@ -289,6 +306,7 @@ namespace Calculator {
             this.butEquals.TabIndex = 20;
             this.butEquals.Text = "=";
             this.butEquals.UseVisualStyleBackColor = true;
+            this.butEquals.Click += new System.EventHandler(this.butEquals_Click);
             // 
             // butMinus
             // 
@@ -301,6 +319,7 @@ namespace Calculator {
             this.butMinus.TabIndex = 21;
             this.butMinus.Text = "-";
             this.butMinus.UseVisualStyleBackColor = true;
+            this.butMinus.Click += new System.EventHandler(this.onSimpleOperation);
             // 
             // butMultiply
             // 
@@ -313,6 +332,7 @@ namespace Calculator {
             this.butMultiply.TabIndex = 22;
             this.butMultiply.Text = "*";
             this.butMultiply.UseVisualStyleBackColor = true;
+            this.butMultiply.Click += new System.EventHandler(this.onSimpleOperation);
             // 
             // butDivide
             // 
@@ -325,6 +345,7 @@ namespace Calculator {
             this.butDivide.TabIndex = 23;
             this.butDivide.Text = "/";
             this.butDivide.UseVisualStyleBackColor = true;
+            this.butDivide.Click += new System.EventHandler(this.onSimpleOperation);
             // 
             // butPercent
             // 
@@ -337,6 +358,7 @@ namespace Calculator {
             this.butPercent.TabIndex = 24;
             this.butPercent.Text = "%";
             this.butPercent.UseVisualStyleBackColor = true;
+            this.butPercent.Click += new System.EventHandler(this.onSimpleOperation);
             // 
             // butSqrt
             // 
@@ -349,6 +371,7 @@ namespace Calculator {
             this.butSqrt.TabIndex = 25;
             this.butSqrt.Text = "√";
             this.butSqrt.UseVisualStyleBackColor = true;
+            this.butSqrt.Click += new System.EventHandler(this.butSqrt_Click);
             // 
             // butFact
             // 
@@ -361,6 +384,7 @@ namespace Calculator {
             this.butFact.TabIndex = 26;
             this.butFact.Text = "!";
             this.butFact.UseVisualStyleBackColor = true;
+            this.butFact.Click += new System.EventHandler(this.butFact_Click);
             // 
             // butDiv1
             // 
@@ -373,6 +397,7 @@ namespace Calculator {
             this.butDiv1.TabIndex = 27;
             this.butDiv1.Text = "1/x";
             this.butDiv1.UseVisualStyleBackColor = true;
+            this.butDiv1.Click += new System.EventHandler(this.butDiv1_Click);
             // 
             // butSin
             // 
@@ -385,6 +410,7 @@ namespace Calculator {
             this.butSin.TabIndex = 28;
             this.butSin.Text = "sin";
             this.butSin.UseVisualStyleBackColor = true;
+            this.butSin.Click += new System.EventHandler(this.butSin_Click);
             // 
             // butCos
             // 
@@ -397,6 +423,7 @@ namespace Calculator {
             this.butCos.TabIndex = 29;
             this.butCos.Text = "cos";
             this.butCos.UseVisualStyleBackColor = true;
+            this.butCos.Click += new System.EventHandler(this.butCos_Click);
             // 
             // butTan
             // 
@@ -409,6 +436,7 @@ namespace Calculator {
             this.butTan.TabIndex = 30;
             this.butTan.Text = "tan";
             this.butTan.UseVisualStyleBackColor = true;
+            this.butTan.Click += new System.EventHandler(this.butTan_Click);
             // 
             // butCTG
             // 
@@ -421,6 +449,7 @@ namespace Calculator {
             this.butCTG.TabIndex = 31;
             this.butCTG.Text = "ctg";
             this.butCTG.UseVisualStyleBackColor = true;
+            this.butCTG.Click += new System.EventHandler(this.butCTG_Click);
             // 
             // butEPow
             // 
@@ -433,6 +462,7 @@ namespace Calculator {
             this.butEPow.Size = new System.Drawing.Size(63, 63);
             this.butEPow.TabIndex = 32;
             this.butEPow.UseVisualStyleBackColor = true;
+            this.butEPow.Click += new System.EventHandler(this.butEPow_Click);
             // 
             // butXPowY
             // 
@@ -444,7 +474,10 @@ namespace Calculator {
             this.butXPowY.Name = "butXPowY";
             this.butXPowY.Size = new System.Drawing.Size(63, 63);
             this.butXPowY.TabIndex = 33;
+            this.butXPowY.Tag = "";
+            this.butXPowY.Text = " ";
             this.butXPowY.UseVisualStyleBackColor = true;
+            this.butXPowY.Click += new System.EventHandler(this.onSimpleOperation);
             // 
             // butPow2
             // 
@@ -457,14 +490,15 @@ namespace Calculator {
             this.butPow2.Size = new System.Drawing.Size(63, 63);
             this.butPow2.TabIndex = 34;
             this.butPow2.UseVisualStyleBackColor = true;
+            this.butPow2.Click += new System.EventHandler(this.butPow2_Click);
             // 
             // textBox
             // 
-            this.textBox.Font = new System.Drawing.Font("Segoe Script", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox.Font = new System.Drawing.Font("Segoe Script", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.textBox.Location = new System.Drawing.Point(9, 64);
-            this.textBox.Multiline = true;
             this.textBox.Name = "textBox";
-            this.textBox.Size = new System.Drawing.Size(477, 63);
+            this.textBox.ReadOnly = true;
+            this.textBox.Size = new System.Drawing.Size(477, 56);
             this.textBox.TabIndex = 35;
             this.textBox.Text = "0";
             this.textBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
@@ -472,18 +506,58 @@ namespace Calculator {
             // label
             // 
             this.label.AutoSize = true;
-            this.label.Font = new System.Drawing.Font("Segoe Print", 13.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label.Font = new System.Drawing.Font("Segoe Print", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label.Location = new System.Drawing.Point(8, 21);
             this.label.Name = "label";
-            this.label.Size = new System.Drawing.Size(121, 40);
+            this.label.Size = new System.Drawing.Size(0, 35);
             this.label.TabIndex = 36;
-            this.label.Text = "Compute";
+            // 
+            // contextMenuStrip1
+            // 
+            this.contextMenuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.contextMenuStrip1.Name = "contextMenuStrip1";
+            this.contextMenuStrip1.Size = new System.Drawing.Size(61, 4);
+            // 
+            // menuStrip1
+            // 
+            this.menuStrip1.ImageScalingSize = new System.Drawing.Size(20, 20);
+            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.fIleToolStripMenuItem,
+            this.helpToolStripMenuItem});
+            this.menuStrip1.Location = new System.Drawing.Point(5, 5);
+            this.menuStrip1.Name = "menuStrip1";
+            this.menuStrip1.Size = new System.Drawing.Size(484, 28);
+            this.menuStrip1.TabIndex = 38;
+            this.menuStrip1.Text = "menuStrip1";
+            // 
+            // fIleToolStripMenuItem
+            // 
+            this.fIleToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.exitToolStripMenuItem});
+            this.fIleToolStripMenuItem.Name = "fIleToolStripMenuItem";
+            this.fIleToolStripMenuItem.Size = new System.Drawing.Size(46, 24);
+            this.fIleToolStripMenuItem.Text = "FIle";
+            // 
+            // helpToolStripMenuItem
+            // 
+            this.helpToolStripMenuItem.Name = "helpToolStripMenuItem";
+            this.helpToolStripMenuItem.Size = new System.Drawing.Size(55, 24);
+            this.helpToolStripMenuItem.Text = "Help";
+            this.helpToolStripMenuItem.Click += new System.EventHandler(this.helpToolStripMenuItem_Click);
+            // 
+            // exitToolStripMenuItem
+            // 
+            this.exitToolStripMenuItem.Name = "exitToolStripMenuItem";
+            this.exitToolStripMenuItem.Size = new System.Drawing.Size(224, 26);
+            this.exitToolStripMenuItem.Text = "Exit";
+            this.exitToolStripMenuItem.Click += new System.EventHandler(this.exitToolStripMenuItem_Click);
             // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink;
             this.ClientSize = new System.Drawing.Size(494, 480);
+            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.label);
             this.Controls.Add(this.textBox);
             this.Controls.Add(this.butPow2);
@@ -502,7 +576,7 @@ namespace Calculator {
             this.Controls.Add(this.butMinus);
             this.Controls.Add(this.butEquals);
             this.Controls.Add(this.butLn);
-            this.Controls.Add(this.button2);
+            this.Controls.Add(this.buttonPlusMin);
             this.Controls.Add(this.butPlus);
             this.Controls.Add(this.butC);
             this.Controls.Add(this.butCE);
@@ -521,12 +595,15 @@ namespace Calculator {
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
+            this.MainMenuStrip = this.menuStrip1;
             this.MaximizeBox = false;
             this.Name = "Form1";
             this.Padding = new System.Windows.Forms.Padding(5);
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Calculator";
             this.Load += new System.EventHandler(this.Form1_Load);
+            this.menuStrip1.ResumeLayout(false);
+            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -553,7 +630,7 @@ namespace Calculator {
         private System.Windows.Forms.Button butCE;
         private System.Windows.Forms.Button butC;
         private System.Windows.Forms.Button butPlus;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonPlusMin;
         private System.Windows.Forms.Button butLn;
         private System.Windows.Forms.Button butEquals;
         private System.Windows.Forms.Button butMinus;
@@ -572,6 +649,11 @@ namespace Calculator {
         private System.Windows.Forms.Button butPow2;
         private System.Windows.Forms.TextBox textBox;
         private System.Windows.Forms.Label label;
+        private System.Windows.Forms.ContextMenuStrip contextMenuStrip1;
+        private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.ToolStripMenuItem fIleToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem exitToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem helpToolStripMenuItem;
     }
 }
 
